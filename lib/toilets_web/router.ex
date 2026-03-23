@@ -68,6 +68,9 @@ defmodule ToiletsWeb.Router do
       on_mount: [{ToiletsWeb.UserAuth, :ensure_authenticated}] do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+
+      # toilets
+      live "/toilets/new", ToiletsNewLive, :new
     end
   end
 
