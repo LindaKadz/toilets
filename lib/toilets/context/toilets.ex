@@ -37,4 +37,22 @@ defmodule Toilets.Bathrooms do
   def change_create_toilet_registration(%Toilet{} = toilet, attrs \\ %{}) do
     Toilet.create_toilet_changeset(toilet, attrs)
   end
+
+  @doc """
+  Gets all toilets.
+
+  Raises `Ecto.QueryError` if query validation fails..
+
+  ## Examples
+
+      iex> all_toilets()
+      %User{}
+
+      iex> all_toilets()
+      ** (Ecto.QueryError)
+
+  """
+  def all_toilets() do
+    Repo.all(Toilet) 
+  end
 end

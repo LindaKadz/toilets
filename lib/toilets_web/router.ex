@@ -71,6 +71,7 @@ defmodule ToiletsWeb.Router do
 
       # toilets
       live "/toilets/new", ToiletsNewLive, :new
+      live "/toilets/index", ToiletsIndexLive, :index
     end
   end
 
