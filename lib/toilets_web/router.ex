@@ -20,7 +20,7 @@ defmodule ToiletsWeb.Router do
   scope "/", ToiletsWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", ToiletsIndexLive, :index
   end
 
   # Other scopes may use custom stacks.
