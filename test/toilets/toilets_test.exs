@@ -1,4 +1,4 @@
-defmodule Toilets.AccountsTest do
+defmodule Toilets.ToiletsTest do
   use Toilets.DataCase
 
   alias Toilets.Bathrooms
@@ -65,6 +65,15 @@ defmodule Toilets.AccountsTest do
       assert get_change(changeset, :location) == toilet_attrs[:location]
       assert get_change(changeset, :notes) == toilet_attrs[:notes]
       assert get_change(changeset, :public_availability) == toilet_attrs[:public_availability]
+    end
+  end
+
+  describe "all_toilets" do
+    test "returns all toilets" do
+      _toilet_1 = toilet_fixture()
+      _toilet_2 = toilet_fixture()
+
+      assert length(Bathrooms.all_toilets()) == 2
     end
   end
 end
